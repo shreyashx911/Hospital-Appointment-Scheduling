@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Appointments List - HealthCare Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">🏥 HealthCare Connect</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="appointment.html" class="nav-link">Book Appointment</a></li>
+                <li><a href="doctors-hospitals.html" class="nav-link">Doctors & Hospitals</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admin-login.html" class="nav-link admin-link active">Admin</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Admin - Appointments List</h1>
+            <p>View and manage all scheduled appointments</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="appointment-form-container">
+                <div class="admin-controls">
+                    <div class="filter-controls">
+                        <select id="filterStatus" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <select id="filterHospital" class="filter-select">
+                            <option value="">All Hospitals</option>
+                            <option value="city-general">City General Hospital</option>
+                            <option value="metro-medical">Metro Medical Center</option>
+                            <option value="community-health">Community Health Clinic</option>
+                            <option value="university-hospital">University Hospital</option>
+                            <option value="regional-medical">Regional Medical Center</option>
+                        </select>
+                        <input type="date" id="filterDate" class="filter-select" placeholder="Filter by date">
+                        <button class="btn-primary" onclick="refreshAppointments()">Refresh</button>
+                    </div>
+                </div>
+
+                <div id="appointmentsList" class="appointments-list">
+                    <p class="info-text">Loading appointments...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Connect</h3>
+                    <p>Your trusted partner in healthcare. Connecting patients with quality medical care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="appointment.html">Book Appointment</a></li>
+                        <li><a href="doctors-hospitals.html">Doctors & Hospitals</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@healthcareconnect.in</p>
+                    <p>📞 +91 11 2345 6789</p>
+                    <p>📍 123 Healthcare Avenue, Connaught Place, New Delhi - 110001</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HealthCare Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="admin-appointments.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>
+

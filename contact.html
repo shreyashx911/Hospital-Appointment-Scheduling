@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HealthCare Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">🏥 HealthCare Connect</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="appointment.html" class="nav-link">Book Appointment</a></li>
+                <li><a href="doctors-hospitals.html" class="nav-link">Doctors & Hospitals</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="admin-login.html" class="nav-link admin-link">Admin</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help - get in touch with our team</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" name="contactName" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email *</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" placeholder="+91 98765 43210">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" name="contactSubject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="appointment">Appointment Inquiry</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <div id="contactSuccess" class="success-message" style="display: none;">
+                        <p>✅ Thank you for contacting us! We'll get back to you soon.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-info-card">
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@healthcareconnect.in</p>
+                                <p>support@healthcareconnect.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+91 11 2345 6789</p>
+                                <p>Mon-Fri: 8:00 AM - 8:00 PM</p>
+                                <p>Sat-Sun: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>Address</h3>
+                                <p>123 Healthcare Avenue</p>
+                                <p>Connaught Place</p>
+                                <p>New Delhi - 110001, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-section">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <h4>How do I book an appointment?</h4>
+                            <p>Simply go to our <a href="appointment.html">Book Appointment</a> page, select your preferred hospital, doctor, date, and time slot, then fill in your information.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I cancel or reschedule my appointment?</h4>
+                            <p>Yes, you can manage your appointments. Please contact us or the hospital directly at least 24 hours before your scheduled time.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Is my information secure?</h4>
+                            <p>Absolutely! We use industry-standard encryption and security measures to protect all patient information and comply with healthcare privacy regulations.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>What if I need emergency care?</h4>
+                            <p>For medical emergencies, please call 108 or 102 immediately. Our platform is for non-emergency appointments only.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Connect</h3>
+                    <p>Your trusted partner in healthcare. Connecting patients with quality medical care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="appointment.html">Book Appointment</a></li>
+                        <li><a href="doctors-hospitals.html">Doctors & Hospitals</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@healthcareconnect.in</p>
+                    <p>📞 +91 11 2345 6789</p>
+                    <p>📍 123 Healthcare Avenue, Connaught Place, New Delhi - 110001</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HealthCare Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dark-mode.js"></script>
+    <script src="contact.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>
+

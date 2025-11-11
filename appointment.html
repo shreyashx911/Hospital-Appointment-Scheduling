@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - HealthCare Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">🏥 HealthCare Connect</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="appointment.html" class="nav-link active">Book Appointment</a></li>
+                <li><a href="doctors-hospitals.html" class="nav-link">Doctors & Hospitals</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admin-login.html" class="nav-link admin-link">Admin</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Schedule Your Appointment</h1>
+            <p>Book your appointment with ease - choose your preferred hospital, doctor, and time slot</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="appointment-form-container">
+                <form id="appointmentForm" class="appointment-form">
+                    <!-- Hospital Selection -->
+                    <div class="form-group">
+                        <label for="hospital">Select Hospital *</label>
+                        <select id="hospital" name="hospital" required>
+                            <option value="">Choose a hospital...</option>
+                            <option value="city-general">City General Hospital</option>
+                            <option value="metro-medical">Metro Medical Center</option>
+                            <option value="community-health">Community Health Clinic</option>
+                            <option value="university-hospital">University Hospital</option>
+                            <option value="regional-medical">Regional Medical Center</option>
+                        </select>
+                    </div>
+
+                    <!-- Doctor Selection -->
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor *</label>
+                        <select id="doctor" name="doctor" required disabled>
+                            <option value="">First select a hospital...</option>
+                        </select>
+                    </div>
+
+                    <!-- Illness/Condition Selection -->
+                    <div class="form-group">
+                        <label for="illness">Select Condition/Illness *</label>
+                        <select id="illness" name="illness" required>
+                            <option value="">Choose a condition...</option>
+                            <option value="general-checkup">General Checkup</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="gastroenterology">Gastroenterology</option>
+                            <option value="ophthalmology">Ophthalmology</option>
+                            <option value="psychiatry">Psychiatry</option>
+                            <option value="emergency">Emergency</option>
+                        </select>
+                    </div>
+
+                    <!-- Date Selection -->
+                    <div class="form-group">
+                        <label for="date">Select Date *</label>
+                        <input type="date" id="date" name="date" required min="">
+                    </div>
+
+                    <!-- Time Slot Selection -->
+                    <div class="form-group">
+                        <label for="timeSlot">Select Time Slot *</label>
+                        <div id="timeSlots" class="time-slots-container">
+                            <p class="info-text">Please select a date to see available time slots</p>
+                        </div>
+                    </div>
+
+                    <!-- Patient Information -->
+                    <div class="form-section">
+                        <h3>Patient Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="patientName">Full Name *</label>
+                            <input type="text" id="patientName" name="patientName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientEmail">Email *</label>
+                            <input type="email" id="patientEmail" name="patientEmail" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientPhone">Phone Number *</label>
+                            <input type="tel" id="patientPhone" name="patientPhone" required placeholder="+91 98765 43210">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientAge">Age *</label>
+                            <input type="number" id="patientAge" name="patientAge" required min="1" max="120" placeholder="Age">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Additional Notes (Optional)</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Any additional information or symptoms you'd like to mention..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Book Appointment</button>
+                </form>
+            </div>
+
+            <!-- Appointment Summary Modal -->
+            <div id="appointmentModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-body">
+                        <h2>✅ Appointment Confirmed!</h2>
+                        <div id="appointmentSummary" class="appointment-summary"></div>
+                        <button id="bookAnotherBtn" class="btn-secondary">Book Another Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HealthCare Connect</h3>
+                    <p>Your trusted partner in healthcare. Connecting patients with quality medical care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="appointment.html">Book Appointment</a></li>
+                        <li><a href="doctors-hospitals.html">Doctors & Hospitals</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@healthcareconnect.in</p>
+                    <p>📞 +91 11 2345 6789</p>
+                    <p>📍 123 Healthcare Avenue, Connaught Place, New Delhi - 110001</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HealthCare Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>
+
